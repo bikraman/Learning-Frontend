@@ -1,3 +1,5 @@
 let user = {
-    name: "John"
+    name: "John",
 };
+
+user = null;
