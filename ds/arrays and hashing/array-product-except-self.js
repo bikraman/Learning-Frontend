@@ -9,17 +9,30 @@ function product(nums) {
 
     let prod = 1;
 
+    const prevProdMap = new Map();
+    const nextProdMap = new Map();
+
     for (let i = 0; i < len; i++) {
-        if (nums[i] !== 0)
-            prod = prod * nums[i];
+        let num = nums[i]
+
+        prevProdMap.set(i, prod)
+        prod = num * prod;
     }
 
 
-    for (let j = 0; j < len; j++) {
-        const item = nums[j]
-        final.push(prod/item);
+    prod = 1;
+
+    for(let i = len - 1; i >= 0; i--) {
+        let num = nums[i]
+
+        nextProdMap.set(i, prod)
+        prod = num * prod;
     }
 
+
+    for (let i = 0; i < len; i++) {
+        final.push(prevProdMap.get(i) * nextProdMap.get(i))
+    }
 
     return final;
 }
