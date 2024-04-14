@@ -24,3 +24,10 @@ for (let i = 0; i < arr.length; i++) {
         console.log(`${map.get(arr[i])} and ${i}`)
     }
 }
+
+
+const length = ar.length;
+for (let i = 0; i <  length; i++) {
+    let start = 0;
+    let end = 0;
+}
