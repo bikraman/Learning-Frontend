@@ -1,5 +1,15 @@
 let ar = Array();
 
-ar.push(23,2333,12);
 
-console.log((Number([])) + 1)
+ar.push(1,2,3);
+console.log(ar)
+
+ar.pop()
+console.log(ar)
+
+
+ar.shift()
+console.log(ar)
+
+ar.unshift(4,5)
+console.log(ar)
