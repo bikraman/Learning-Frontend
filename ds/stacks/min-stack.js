@@ -1,9 +1,11 @@
+var Node = function() {
+    this.value = 0;
+}
+
 
 var MinStack = function () {
     this.stack = [];
-    this.min = 0;
     this.minStack = new Map();
-
 };
 
 /** 
@@ -14,15 +16,19 @@ MinStack.prototype.push = function (val) {
 
     if (this.stack.length === 0) {
         this.minStack.set(0, val)
-        this.min = val;
         this.stack.push(val);
     }
     else {
-        this.stack.push(val);
-        if (val < this.min) {
-            this.min = val;
+        const lastMinValue = this.minStack.get(this.stack.length - 1);
+        if (val < lastMinValue) {
+            this.minStack.set(this.stack.length, val)     
         }
-        this.minStack.set(this.stack.length - 1, this.min)
+        else {
+            this.minStack.set(this.stack.length, lastMinValue)     
+        }
+        
+        this.stack.push(val);
+
     }
 
 };
