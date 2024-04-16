@@ -35,7 +35,6 @@ function verifyMatrix(matrix, width, height, startingX, startingY) {
 
 function isValid(board) {
 
-
     for(let i = 0; i < board.length; i++) {
         const validationMap = new Map();
 
