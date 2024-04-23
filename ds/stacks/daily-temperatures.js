@@ -21,14 +21,9 @@ var dailyTemperatures = function(temperatures) {
                 let nextTemp = temperatures[j];
 
                 if (nextTemp > currentTemp) {
-                    console.log("true")
-                    console.log(j - i)
                     days.push(j - i);
                     break inner;
                 }
-
-                // days.push(0);
-
 
                 if (j === len - 1) {
                     days.push(0);
@@ -41,8 +36,7 @@ var dailyTemperatures = function(temperatures) {
     days.push(0)
 
 
-    
-    console.log(days)
+    return days;
 };
 
 dailyTemperatures(temperatures);
