@@ -9,34 +9,51 @@ var dailyTemperatures = function(temperatures) {
 
     const len = temperatures.length;
     let days = [];
+    let stack = [];
 
+    stack.push(temperatures[0])
+    // while ()
 
-    for(let i = 0; i < len; i++) {
+    for(let i = 1; i < len; i++) {
 
         let currentTemp = temperatures[i];
 
-        inner: {
-                for(let j = i + 1; j < len; j++) {
-
-                let nextTemp = temperatures[j];
-
-                if (nextTemp > currentTemp) {
-                    days.push(j - i);
-                    break inner;
-                }
-
-                if (j === len - 1) {
-                    days.push(0);
-                }
-            }
+        if(stack.at(-1) > currentTemp) {
+            stack.pop()
+            stack.push(currentTemp)
         }
+
+
+
 
     }
 
-    days.push(0)
-
-
+    console.log(stack)
     return days;
 };
 
-dailyTemperatures(temperatures);
+// dailyTemperatures(temperatures);
+
+
+function monotonic(something) {
+    let stack = [];
+    let result = [];
+    for (let i = 0; i < something.length; i++) {
+        while (stack.length !== 0 && something[stack.at(-1)] < something[i])  { //'>=' can be substitute for any operation reqd
+            let curr = stack.pop()
+            result[curr] = i - curr;
+        }            
+        stack.push(i) // append current index's item to stack
+    }
+
+    for (let i = 0; i < stack.length; i++) {
+        result.push(0)
+    }
+
+    console.log(result)
+
+    return result;
+}
+
+
+monotonic(temperatures);
