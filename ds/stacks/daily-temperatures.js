@@ -1,5 +1,4 @@
-let temperatures = [73,74,75,71,69,72,76,73];
-
+let temperatures = [55,38,53,81,61,93,97,32,43,78]
 
 /**
  * @param {number[]} temperatures
@@ -7,39 +6,11 @@ let temperatures = [73,74,75,71,69,72,76,73];
  */
 var dailyTemperatures = function(temperatures) {
 
-    const len = temperatures.length;
-    let days = [];
-    let stack = [];
-
-    stack.push(temperatures[0])
-    // while ()
-
-    for(let i = 1; i < len; i++) {
-
-        let currentTemp = temperatures[i];
-
-        if(stack.at(-1) > currentTemp) {
-            stack.pop()
-            stack.push(currentTemp)
-        }
-
-
-
-
-    }
-
-    console.log(stack)
-    return days;
-};
-
-// dailyTemperatures(temperatures);
-
-
-function monotonic(something) {
     let stack = [];
     let result = [];
-    for (let i = 0; i < something.length; i++) {
-        while (stack.length !== 0 && something[stack.at(-1)] < something[i])  { //'>=' can be substitute for any operation reqd
+    // result.length === temperatures.length;
+    for (let i = 0; i < temperatures.length; i++) {
+        while (stack.length !== 0 && temperatures[stack.at(-1)] < temperatures[i])  { //'>=' can be substitute for any operation reqd
             let curr = stack.pop()
             result[curr] = i - curr;
         }            
@@ -47,13 +18,11 @@ function monotonic(something) {
     }
 
     for (let i = 0; i < stack.length; i++) {
-        result.push(0)
+        result[stack[i]] = 0;
     }
 
     console.log(result)
-
     return result;
-}
+};
 
-
-monotonic(temperatures);
+dailyTemperatures(temperatures);
