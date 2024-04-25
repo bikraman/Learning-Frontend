@@ -8,7 +8,6 @@ var dailyTemperatures = function(temperatures) {
 
     let stack = [];
     let result = [];
-    // result.length === temperatures.length;
     for (let i = 0; i < temperatures.length; i++) {
         while (stack.length !== 0 && temperatures[stack.at(-1)] < temperatures[i])  { //'>=' can be substitute for any operation reqd
             let curr = stack.pop()
@@ -21,7 +20,6 @@ var dailyTemperatures = function(temperatures) {
         result[stack[i]] = 0;
     }
 
-    console.log(result)
     return result;
 };
 
