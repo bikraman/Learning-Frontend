@@ -4,7 +4,7 @@ array.splice(-1, 0, 15,16); //add items
 
 console.log(array);
 
-array.splice("0", "2"); //delete items
+array.splice(0, 2); //delete items
 
 console.log(array);
 
