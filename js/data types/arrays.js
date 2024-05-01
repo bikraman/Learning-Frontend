@@ -1,22 +1,27 @@
-// let ar = Array();
+// const styles = ["Jazz", "Blues"];
+// console.log(styles);
 
-// ar.push(1,2,3);
-// console.log(ar)
+// styles.push("Rock-n-Roll");
+// console.log(styles);
 
-// ar.pop()
-// console.log(ar)
+// const pos = Math.floor(styles.length / 2)
 
-// ar.shift()
-// console.log(ar)
+// styles[pos] = "Classics";
+// console.log(styles);
 
-// ar.unshift(4,5)
-// console.log(ar)
-"use strict";
+// styles.shift()
+// console.log(styles);
+
+// styles.unshift("Rap", "Reggae");
+// console.log(styles);
+
 
 let arr = ["a", "b"];
 
 arr.push(function() {
-  console.log( this );
+  alert( this );
 });
 
-arr[2](); // ? 
+arr[2](); // ?
+
+
