@@ -131,13 +131,34 @@
 // console.log(arr[2].name); // Pete
 
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 29 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
 
-let arr = [ john, pete, mary ];
+// let arr = [ john, pete, mary ];
 
-const getAverageAge = (array) => array.map((value) => value.age).reduce((previousValue, currentValue) => previousValue + currentValue) / array.length;
+// const getAverageAge = (array) => array.map((value) => value.age).reduce((previousValue, currentValue) => previousValue + currentValue) / array.length;
 
 
-console.log( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+// console.log( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+
+
+function unique(arr) {
+    const existing = []
+    const uniqueArray = []
+    
+    arr.forEach(element => {
+        if (existing.indexOf(element) == -1) {
+            uniqueArray.push(element)
+            existing.push(element)
+        }
+    });
+
+    return uniqueArray;
+}
+  
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+"Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+  
+console.log( unique(strings) ); // Hare, Krishna, :-O
