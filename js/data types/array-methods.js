@@ -56,13 +56,39 @@
 
 // console.log( arr ); // 8, 5, 2, 1, -10
 
-let arr = ["HTML", "JavaScript", "CSS"];
+// let arr = ["HTML", "JavaScript", "CSS"];
 
-function copySorted(array) {
-    return array.slice().sort();
-}
+// function copySorted(array) {
+//     return array.slice().sort();
+// }
 
-let sorted = copySorted(arr);
+// let sorted = copySorted(arr);
 
-console.log( sorted ); // CSS, HTML, JavaScript
-console.log( arr ); // HTML, JavaScript, CSS (no changes)
+// console.log( sorted ); // CSS, HTML, JavaScript
+// console.log( arr ); // HTML, JavaScript, CSS (no changes)
+
+// function Calculator() {
+
+//     this.calculate = function(str) {
+//         const splt = str.split(" ");
+//         return parseInt(splt[0]) + parseInt(splt[2]); 
+//     }
+
+// }
+
+// let calc = Calculator;
+
+// console.log(calc)
+
+// console.log( calc.calculate("3 + 7") ); // 10
+
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let users = [ john, pete, mary ];
+
+// let names = users.map((value) => value.name)
+
+// console.log( names ); // John, Pete, Mary
