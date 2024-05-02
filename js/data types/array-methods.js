@@ -50,8 +50,19 @@
 
 // console.log( arr ); // [3, 1]
 
-let arr = [5, 2, 1, -10, 8];
+// let arr = [5, 2, 1, -10, 8];
 
-arr.sort((a, b) => b - a)
+// arr.sort((a, b) => b - a)
 
-console.log( arr ); // 8, 5, 2, 1, -10
+// console.log( arr ); // 8, 5, 2, 1, -10
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+function copySorted(array) {
+    return array.slice().sort();
+}
+
+let sorted = copySorted(arr);
+
+console.log( sorted ); // CSS, HTML, JavaScript
+console.log( arr ); // HTML, JavaScript, CSS (no changes)
