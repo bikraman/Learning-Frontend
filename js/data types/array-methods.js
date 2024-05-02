@@ -17,15 +17,35 @@
 // camelize("list-style-image") == 'listStyleImage';
 // camelize("-webkit-transition") == 'WebkitTransition';
 
-function filterRange(array, low, high) {
-    return array.filter((value) => value >= low && value <= high)
-}
+// function filterRange(array, low, high) {
+//     return array.filter((value) => value >= low && value <= high)
+// }
+
+
+// let arr = [5, 3, 8, 1];
+
+// let filtered = filterRange(arr, 1, 4);
+
+// console.log( filtered ); // 3,1 (matching values)
+
+// console.log( arr ); // 5,3,8,1 (not modified)
 
 
 let arr = [5, 3, 8, 1];
 
-let filtered = filterRange(arr, 1, 4);
+function filterRangeInPlace(arr, low, high) {
 
-console.log( filtered ); // 3,1 (matching values)
+    arr.filter((value, index) => { 
+        if (value >= low && value <= high) {
+            return true;
+        }
+        else {
+            arr.splice(index, 1);
+            return false;
+        }
+    });
+}
 
-console.log( arr ); // 5,3,8,1 (not modified)
+filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+
+console.log( arr ); // [3, 1]
