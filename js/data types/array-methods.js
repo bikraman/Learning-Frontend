@@ -31,21 +31,27 @@
 // console.log( arr ); // 5,3,8,1 (not modified)
 
 
-let arr = [5, 3, 8, 1];
+// let arr = [5, 3, 8, 1];
 
-function filterRangeInPlace(arr, low, high) {
+// function filterRangeInPlace(arr, low, high) {
 
-    arr.filter((value, index) => { 
-        if (value >= low && value <= high) {
-            return true;
-        }
-        else {
-            arr.splice(index, 1);
-            return false;
-        }
-    });
-}
+//     arr.filter((value, index) => { 
+//         if (value >= low && value <= high) {
+//             return true;
+//         }
+//         else {
+//             arr.splice(index, 1);
+//             return false;
+//         }
+//     });
+// }
 
-filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+// filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
 
-console.log( arr ); // [3, 1]
+// console.log( arr ); // [3, 1]
+
+let arr = [5, 2, 1, -10, 8];
+
+arr.sort((a, b) => b - a)
+
+console.log( arr ); // 8, 5, 2, 1, -10
