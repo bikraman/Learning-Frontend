@@ -1,10 +1,19 @@
-const array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
-array.splice(-1, 0, 15,16); //add items
+function camelize(str) {
 
-console.log(array);
+    const reduced = str.split("-").reduce((previousValue, currentValue, currentIndex) => {
+        if (currentIndex > 0) {
+            return previousValue + currentValue[0]?.toUpperCase() + currentValue?.slice(1, currentValue?.length);
+        }
+        return previousValue + currentValue
+    });
 
-array.splice(0, 2); //delete items
+    return reduced;
+}
 
-console.log(array);
+
+
+camelize("background-color") == 'backgroundColor';
+camelize("list-style-image") == 'listStyleImage';
+camelize("-webkit-transition") == 'WebkitTransition';
 
