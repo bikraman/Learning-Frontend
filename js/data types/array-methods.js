@@ -143,22 +143,43 @@
 // console.log( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 
 
-function unique(arr) {
-    const existing = []
-    const uniqueArray = []
+// function unique(arr) {
+//     const existing = []
+//     const uniqueArray = []
     
-    arr.forEach(element => {
-        if (existing.indexOf(element) == -1) {
-            uniqueArray.push(element)
-            existing.push(element)
-        }
-    });
+//     arr.forEach(element => {
+//         if (existing.indexOf(element) == -1) {
+//             uniqueArray.push(element)
+//             existing.push(element)
+//         }
+//     });
 
-    return uniqueArray;
-}
+//     return uniqueArray;
+// }
   
-let strings = ["Hare", "Krishna", "Hare", "Krishna",
-"Krishna", "Krishna", "Hare", "Hare", ":-O"
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+// "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+  
+// console.log( unique(strings) ); // Hare, Krishna, :-O
+
+let users = [
+    {id: 'john', name: "John Smith", age: 20},
+    {id: 'ann', name: "Ann Smith", age: 24},
+    {id: 'pete', name: "Pete Peterson", age: 31},
 ];
+
+
+let usersById = groupById(users);
+
+
   
-console.log( unique(strings) ); // Hare, Krishna, :-O
+/*
+// after the call we should have:
+
+usersById = {
+john: {id: 'john', name: "John Smith", age: 20},
+ann: {id: 'ann', name: "Ann Smith", age: 24},
+pete: {id: 'pete', name: "Pete Peterson", age: 31},
+}
+*/
